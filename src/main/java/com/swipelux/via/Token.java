@@ -1,5 +1,8 @@
 package com.swipelux.via;
 
+import lombok.ToString;
+
+@ToString
 public class Token {
     public String symbol;
     public int decimals;

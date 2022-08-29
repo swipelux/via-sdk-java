@@ -8,6 +8,7 @@ import kong.unirest.Unirest;
 import java.math.BigDecimal;
 import java.util.Optional;
 
+
 public class ViaProtocolClient {
     private static final String DEFAULT_BASE_URL = "https://router-api.via.exchange";
 
@@ -33,11 +34,31 @@ public class ViaProtocolClient {
 
     public GetRoutesResponse getRoutes(GetRoutesRequest params) {
         var json = executeGet(ROUTES_PATH, params);
-        return mapper.readValue(mapper.writeValue(json), GetRoutesResponse.class);
+        return mapper.readValue(json.toString(), GetRoutesResponse.class);
     }
 
     public JsonNode getAllowanceStatus(CheckAllowanceStatusRequest params) {
         return executeGet(CHECK_ALLOWANCE_STATUS_PATH, params);
+    }
+
+    public JsonNode buildApprovalTx() {
+        throw new UnsupportedOperationException();
+    }
+
+    public JsonNode buildTx() {
+        throw new UnsupportedOperationException();
+    }
+
+    public JsonNode startRoute() {
+        throw new UnsupportedOperationException();
+    }
+
+    public JsonNode startAction() {
+        throw new UnsupportedOperationException();
+    }
+
+    public JsonNode checkTx() {
+        throw new UnsupportedOperationException();
     }
 
     public static void main(String[] args) {
